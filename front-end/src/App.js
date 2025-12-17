@@ -5,6 +5,7 @@ import SignUp from './pages/SignUp';
 const router = createBrowserRouter(
   createRoutesFromElements(
   <>
+    <Route path="/" element={<Login />} />
     <Route path="/login" element={<Login />} />
     <Route path="/signup" element={<SignUp />} />
   </>

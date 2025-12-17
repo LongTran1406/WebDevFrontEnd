@@ -27,7 +27,7 @@ jobs:
           npm run build
 
       - name: Copy Static Web App config
-        run: cp ./front-end/staticwebapp.config.json ./front-end/build/
+        run: cp ./front-end/staticwebapp.config.json ./front-end/build/staticwebapp.config.json
 
       - name: Build And Deploy
         id: builddeploy
