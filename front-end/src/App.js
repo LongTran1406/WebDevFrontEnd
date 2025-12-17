@@ -1,23 +1,23 @@
-import { useState } from "react";
+import {Route, createBrowserRouter, createRoutesFromElements, RouterProvider} from 'react-router-dom';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+  <>
+    <Route path="/login" element={<Login />} />
+    <Route path="/signup" element={<SignUp />} />
+  </>
+  ),
+)
+
 
 function App() {
-  const [data, setData] = useState(null);
-
-  const fetchMessage = async () => {
-    const res = await fetch("https://webdevbackend-azfta6breyh2enh2.australiaeast-01.azurewebsites.net/api/message");
-    const json = await res.json();
-    setData(json);
-  };
-
-  return (
-    <div className="p-6">
-      <button className="bg-blue-500 text-white px-4 py-2" onClick={fetchMessage}>
-        Call Backend
-      </button>
-
-      {data && <p className="mt-4">Message: {data.message}</p>}
-    </div>
-  );
+  return(
+    <>
+      <RouterProvider router={router} />
+    </>
+  )
 }
 
 export default App;
