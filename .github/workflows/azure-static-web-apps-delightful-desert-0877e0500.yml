@@ -29,9 +29,9 @@ jobs:
       # Install dependencies and build React app
       - name: Build Frontend
         run: |
-          cd front-end
-          npm install
-          npm run build
+          npm install --prefix front-end
+          npm run build --prefix front-end
+
 
       # Deploy to Azure Static Web App
       - name: Build And Deploy
